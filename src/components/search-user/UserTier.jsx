@@ -11,7 +11,7 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 `;
 const Chart = styled.div`
   display: flex;
@@ -36,17 +36,17 @@ const Img = styled.img`
   height: 75%;
 `;
 const RankedText = styled.p`
-  font-family: "KBO-Dia-Gothic_bold";
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 600;
   font-size: 20px;
 `;
 const RankedTier = styled.p`
-  font-family: "KBO-Dia-Gothic_bold";
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
 `;
 const RankedWin = styled.p`
-  font-family: "GothicA1-Light";
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   font-size: 14px;
 `;
 const TextBox = styled.div`
@@ -57,9 +57,8 @@ const TextBox = styled.div`
 `;
 
 const RankedLP = styled.p`
-  font-family: "GothicA1-Light";
-  font-family: "KBO-Dia-Gothic_bold";
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   font-size: 15px;
 `
 

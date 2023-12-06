@@ -18,7 +18,7 @@ const Box = styled.div`
   display: flex;
   height: 150px;
   justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
   flex-direction: column;
 `;
 const TextBox = styled.div`
@@ -27,18 +27,19 @@ const TextBox = styled.div`
   gap: 10px;
 `
 const Name = styled.h1`
-  font-family: "KBO-Dia-Gothic_bold";
-  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 600;
   font-size: 30px;
 `;
 const Level = styled.p`
-  font-family: "KBO-Dia-Gothic_bold";
-  font-weight: 500;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   font-size: 20px;
 `;
 const ReData = styled.button`
   cursor: pointer;
-  font-family: "GothicA1-Light";
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   font-size: 16px;
   border: none;
   background-color: #fd6505;
@@ -46,8 +47,6 @@ const ReData = styled.button`
   border-radius: 10px;
   width: 90px;
   height: 45px;
-  margin-top: 20px;
-  font-weight: 600;
 `;
 export default function UserData() {
   return (

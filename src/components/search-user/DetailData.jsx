@@ -29,15 +29,20 @@ const TabData = styled.div`
 `;
 const TabMenu = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `
 const TabOption = styled.li`
-  font-family: 'GothicA1-Light';
-  font-family: "KBO-Dia-Gothic_bold";
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   font-size: 20px;
   padding: 20px 0px;
-  padding-right: 20px;
+  padding-left: 20px;
+`
+const Line = styled.div`
+  width: 90%;
+  height: 5px;
+  margin: 0 auto;
+  background-color: rgb(242, 242, 245);
 `
 export default function DetailData() {
   return (
@@ -53,6 +58,7 @@ export default function DetailData() {
                 <TabOption>메인</TabOption>
                 <TabOption>챔피언</TabOption>
               </TabMenu>
+              <Line/>
             </TabData>
           </RightBox>
         </Data>

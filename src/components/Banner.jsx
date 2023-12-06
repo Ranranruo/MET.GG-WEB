@@ -14,7 +14,7 @@ const Text = styled.p`
     font-family: 'GothicA1-Light';
     font-size: 13px;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 17px;
     &:hover{
         text-decoration: underline;
     }

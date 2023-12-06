@@ -6,17 +6,18 @@ const Inner = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   flex-direction: column;
-`;
+  `;
 const Text = styled.p`
   font-family: "GothicA1-Light";
-`;
+  padding-bottom: 10px;
+  `;
 const Ul = styled.ul`
   font-family: "GothicA1-Light";
   display: flex;
   gap: 10px;
-`;
+  `;
 export default function Footer() {
   return (
     <Inner>
