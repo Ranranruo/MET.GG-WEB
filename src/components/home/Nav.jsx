@@ -69,8 +69,9 @@ export default function Nav() {
     }
     const onSearch = (e) =>{
         if(e.key == "Enter"){
+            const url = e.target.value.split('#', 2)
+            Navigate(`/search-user/${url[0]}/${url[1]}`);
             setInput("")
-            Navigate(`/search-user/${e.target.value}`);
         }
     }
     return (

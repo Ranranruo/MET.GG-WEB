@@ -48,13 +48,13 @@ const ReData = styled.button`
   width: 90px;
   height: 45px;
 `;
-export default function UserData() {
+export default function UserData({name, tag}) {
   return (
     <Inner>
       <Icon src="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/588.png"></Icon>
       <Box>
         <TextBox>
-          <Name>란란루우#1105</Name>
+          <Name>{`${name}#${tag}`}</Name>
           <Level>Lv.301</Level>
         </TextBox>
         <ReData>전적갱신</ReData>
