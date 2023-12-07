@@ -22,13 +22,9 @@ const LeftBox = styled.div`
 `;
 const RightBox = styled.div`
   display: flex;
+  gap: 10px;
   flex-direction: column;
 `;
-const TabData = styled.div`
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-  `;
 const TabMenu = styled.div`
   width: 100%;
   background-color: white;
