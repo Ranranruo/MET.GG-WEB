@@ -59,25 +59,27 @@ const SearchSvg = styled.svg`
 export default function Menu() {
     const Navigate = useNavigate()
     const [inputText, setInput] = useState("");
-    const onChange = (e) =>{
+    const onChange = (e) => {
         setInput(e.target.value);
     }
-    const onSearch = (e) =>{
-        if(e.key == "Enter"){
+    const onSearch = (e) => {
+        if (e.key == "Enter") {
+            const url = e.target.value.split('#', 2)
+            Navigate(`/search-user/${url[0]}/${url[1]}`);
             setInput("")
-            Navigate(`/search-user/${e.target.value}`);
         }
     }
     return (
         <Flex>
             <Ul>
                 <Li><Link to="/">홈</Link></Li>
-                <Li><Link to="/">챔피언</Link></Li>
+                <Li><Link to="/find-pcroom">PC방 찾기</Link></Li>
                 <Li><Link to="/">파티찾기</Link></Li>
                 <Li><Link to="/">데스크톱</Link></Li>
             </Ul>
             <Search>
-                <Input onChange={onChange} onKeyUp={onSearch} placeholder="닉네임 #태그" value={inputText}></Input>
+                <Input onChange={onChange} onKeyUp={onSearch} value={inputText} placeholder="닉네임 #태그"></Input>
+
                 <SearchSvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </SearchSvg>

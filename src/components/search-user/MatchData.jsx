@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled, { css } from "styled-components"
 const Wrapper = styled.div`
   background-color: white;
@@ -9,7 +10,7 @@ const Match = styled.div`
    display: grid;
    position: relative;
    background-color: rgba(93, 156, 235, 0.25);
-   grid-template-columns: 20% 35%;
+   grid-template-columns: 20% 35% 15% 1fr;
    height: 130px;
    border-radius: 10px;
    padding: 15px 20px;
@@ -22,12 +23,22 @@ const Match = styled.div`
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: absolute;
-    background-color: rgba(93, 156, 235, 0.8);
+    background-color: rgba(93, 156, 235, 1);
    }
    ${(props) =>
         props.primary &&
         css`
-    border-color: rgba(232, 64, 87, 1);
+    background-color: rgba(232, 64, 87, 0.25);
+    &::before{
+        width:10px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    background-color: rgba(232, 64, 87, 1);
+    }
     `};
     `
 const MatchDetail = styled.div`
@@ -58,6 +69,11 @@ const IsWin = styled.p`
   font-size: 20px;
   font-family: 'Noto Sans KR', sans-serif;
   align-self: flex-end;
+  ${(props) =>
+        props.primary &&
+        css`
+        color: rgba(232, 64, 87, 1);
+    `};
   `
 const DetailTextBox = styled.div`
   display: flex;
@@ -80,7 +96,6 @@ const InGameData = styled.div`
     grid-template-areas: 
     "icon spell kda"
     "item item item";
-
     `
 const ChampionIcon = styled.div`
     position: relative;
@@ -181,6 +196,62 @@ const AverageKda = styled.p`
     font-weight: 300;
     color: rgba(0, 0, 0, 0.6);
 `
+const EvaluationBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+`
+const KillRate = styled.p`
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgba(255, 0, 0, 0.9);
+    font-size: 17px;
+    font-weight: 400;
+
+`
+const WardPoint = styled.p`
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    
+`
+const CS = styled.p`
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 200;
+    
+`
+const InGameRank = styled.p`
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(104, 104, 104);
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    width: 50px;
+    height: 25px;
+`
+const UserList = styled.div`
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr ;
+    `
+const UserBox = styled.div`
+    display: flex;
+    align-items: center;
+`
+const UserName = styled.p`
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    
+`
+const UserChamIcon = styled.div`
+    background-image: url(${(props) => props.url});
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    background-size: 110%;
+`;
 export default function MatchData() {
     return (
         <Wrapper>
@@ -207,7 +278,7 @@ export default function MatchData() {
                         <Kda>
                             <KA>1</KA>/<Death>12</Death>/<KA>5</KA>
                         </Kda>
-                            <AverageKda>0.50 KDA</AverageKda>
+                        <AverageKda>0.50 KDA</AverageKda>
                     </KdaBox>
                     <ItemBox>
                         <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
@@ -219,6 +290,154 @@ export default function MatchData() {
                         <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3364.png" primary="true"></Item>
                     </ItemBox>
                 </InGameData>
+                <EvaluationBox>
+                    <KillRate>킬관여 10%</KillRate>
+                    <WardPoint>시야점수 10</WardPoint>
+                    <CS>CS 120</CS>
+                    <InGameRank>10등</InGameRank>
+                </EvaluationBox>
+                <UserList>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                </UserList>
+            </Match>
+            <Match primary="true">
+                <MatchDetail>
+                    <DetailTextBox>
+                        <IsWin primary="true">패배</IsWin>
+                        |
+                        <Ranked>솔랭</Ranked>
+                    </DetailTextBox>
+                    <AverageTier>실버 VI</AverageTier>
+                    <Time>26:42</Time>
+                    <Day>1시간 전</Day>
+                </MatchDetail>
+                <InGameData>
+                    <ChampionIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                    <Skill>
+                        <Spell url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerFlash.png"></Spell>
+                        <Spell url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerSmite.png" style={{ gridArea: 'Spell2' }} ></Spell>
+                        <Rune url="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png"></Rune>
+                        <Rune url="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png" primary="true"></Rune>
+                    </Skill>
+                    <KdaBox>
+                        <Kda>
+                            <KA>1</KA>/<Death>12</Death>/<KA>5</KA>
+                        </Kda>
+                        <AverageKda>0.50 KDA</AverageKda>
+                    </KdaBox>
+                    <ItemBox>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/1001.png"></Item>
+                        <Item></Item>
+                        <Item url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3364.png" primary="true"></Item>
+                    </ItemBox>
+                </InGameData>
+                <EvaluationBox>
+                    <KillRate>킬관여 10%</KillRate>
+                    <WardPoint>시야점수 10</WardPoint>
+                    <CS>CS 120</CS>
+                    <InGameRank>10등</InGameRank>
+                </EvaluationBox>
+                <UserList>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                </UserList>
             </Match>
         </Wrapper>
     )

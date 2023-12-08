@@ -77,7 +77,7 @@ export default function DetailData() {
               {showChampion ? <TabOption onClick={ChangeShow}>메인</TabOption> : <TabOption onClick={ChangeShow} primary="true">메인</TabOption >}
               {showChampion ? <TabOption onClick={ChangeShow} primary="true">챔피언</TabOption> : <TabOption onClick={ChangeShow}>챔피언</TabOption>}
             </TabMenu>
-            {showChampion ? <ChampionData/> : <MatchData/>}
+            {!showChampion ? <ChampionData/> : <MatchData/>}
           </RightBox>
         </Data>
       </Inner>

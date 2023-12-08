@@ -1,4 +1,5 @@
 body{
     color: rgb(253, 101, 5);
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
+    position: absolute;
 }

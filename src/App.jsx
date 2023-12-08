@@ -7,6 +7,7 @@ import CreateAccount from "./pages/CreateAccount";
 import { GlobalStyles } from "./asset/global/GlobalStyles";
 import { ThemeContext, ThemeProvider } from "styled-components";
 import { useState } from "react";
+import FindPcRoom from "./pages/FindPcRoom";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "search-user/:name/:tag",
         element: <SearchUser />
+      },
+      {
+        path: "find-pcroom",
+        element: <FindPcRoom/>
       }
     ],
   },
