@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { fonts } from "../../public/font/font"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { auth } from "../db/firebase"
 const Flex = styled.div`
     display: flex;
     align-items: center;
@@ -27,7 +28,7 @@ const Svg = styled.svg`
     width: 25px;
     height: 25px;
 `
-const LoginButton = styled.button`
+const LoginButton = styled(Link)`
     ${fonts}
     font-size: 13px;
     font-family: 'GothicA1-Light';
@@ -74,7 +75,7 @@ export default function Menu() {
             <Ul>
                 <Li><Link to="/">홈</Link></Li>
                 <Li><Link to="/find-pcroom">PC방 찾기</Link></Li>
-                <Li><Link to="/">파티찾기</Link></Li>
+                <Li><Link to="/find-party">파티찾기</Link></Li>
                 <Li><Link to="/">데스크톱</Link></Li>
             </Ul>
             <Search>
@@ -88,7 +89,7 @@ export default function Menu() {
                 <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" fill="currentColor" className="w-5 h-5">
                     <path fillRule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clipRule="evenodd" />
                 </Svg>
-                <LoginButton>로그인</LoginButton>
+                <LoginButton to="/login">로그인</LoginButton>
             </Div>
         </Flex>
     )

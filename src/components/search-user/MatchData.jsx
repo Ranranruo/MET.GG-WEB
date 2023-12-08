@@ -233,7 +233,8 @@ const InGameRank = styled.p`
 `
 const UserList = styled.div`
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr ;
+    height: 110px;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr ;
     `
 const UserBox = styled.div`
     display: flex;
@@ -242,14 +243,14 @@ const UserBox = styled.div`
 const UserName = styled.p`
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 15px;
     
 `
 const UserChamIcon = styled.div`
     background-image: url(${(props) => props.url});
     border-radius: 5px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background-size: 110%;
 `;
 export default function MatchData() {
@@ -345,6 +346,18 @@ export default function MatchData() {
                             <UserName>란란루우</UserName>
                         </UserBox>
                     </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
                 </UserList>
             </Match>
             <Match primary="true">
@@ -389,6 +402,18 @@ export default function MatchData() {
                     <InGameRank>10등</InGameRank>
                 </EvaluationBox>
                 <UserList>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
+                    <Link>
+                        <UserBox>
+                            <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />
+                            <UserName>란란루우</UserName>
+                        </UserBox>
+                    </Link>
                     <Link>
                         <UserBox>
                             <UserChamIcon url="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png" />

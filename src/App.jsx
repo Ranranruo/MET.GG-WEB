@@ -8,6 +8,7 @@ import { GlobalStyles } from "./asset/global/GlobalStyles";
 import { ThemeContext, ThemeProvider } from "styled-components";
 import { useState } from "react";
 import FindPcRoom from "./pages/FindPcRoom";
+import FindParty from "./pages/FindParty";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "find-pcroom",
         element: <FindPcRoom/>
+      },
+      {
+        path: "find-party",
+        element: <FindParty/>
       }
     ],
   },

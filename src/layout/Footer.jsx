@@ -23,7 +23,7 @@ export default function Footer() {
     <Inner>
       <Ul>
         <Link to="/">홈</Link>
-        <Link to="/">챔피언</Link>
+        <Link to="/">PC방 찾기</Link>
         <Link to="/">파티찾기</Link>
         <Link to="/">데스크톱</Link>
       </Ul>
